@@ -199,27 +199,26 @@ xhr.onreadystatechange = function(){
           
         var userPhone = results.results[i].cell;
 
-        // Create the card
+   
         createCard(index, userName, userEmail, userAddress, userImg);
 
-        // Create overlay
+       
         createOverlay(index, userName, userEmail, userAddress, userImg, userBday, userPhone);
       }
 
       // ==================
       // EVENT LISTENERS
-      // ==================
+     
 
-      // Listen on the PARENT
+      // Parent of event listner
       $('.cards-container .card').on('click', function(){
 
-        // Get the value of the employee #card-X
+        
         var cardID = $(this).attr('id');
         var employeeNumber = cardID.slice(5,7);
         // console.log('Employee Number: ' + employeeNumber);
 
-          // Display the overlay & card that matches the employee number
-              // overlay.style.display = 'flex';
+         
               overlay.style.left = 0;
               const cardToShow = document.querySelector('.overlay .card-' + employeeNumber);
               cardToShow.style.display = 'flex';
