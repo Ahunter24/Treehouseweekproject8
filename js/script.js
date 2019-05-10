@@ -3,7 +3,7 @@ const cardContainer = document.querySelector('.cards-container');
 const overlay = document.querySelector('.overlay');
 const url = 'https://randomuser.me/api/?results=12&nat=us';
 
-// Create a card for each employee
+// The different card for each employee
 function createCard(index, name, email, address, img){
   const card = document.createElement('DIV');
   card.classList.add('card');
@@ -41,7 +41,7 @@ function createCard(index, name, email, address, img){
   cardContainer.appendChild(card);
 }
 
-// Create an overlay for each employee
+// Everytime an overlay is created
 function createOverlay(index, name, email, address, img, dob, phone){
   const card = document.createElement('DIV');
   card.classList.add('card');
@@ -162,9 +162,9 @@ function getNextCard(){
 }
 
 
-// ===============================
-// Connect to the Random User API
-// ===============================
+
+// Associate the Random User API
+
 
 // 1. Create a new XHR object
 const xhr = new XMLHttpRequest();
