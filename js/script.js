@@ -1,9 +1,9 @@
-// Initialize variables
+//variables started
 const cardContainer = document.querySelector('.cards-container');
 const overlay = document.querySelector('.overlay');
 const url = 'https://randomuser.me/api/?results=12&nat=us';
 
-// The different card for each employee
+
 function createCard(index, name, email, address, img){
   const card = document.createElement('DIV');
   card.classList.add('card');
@@ -166,7 +166,6 @@ function getNextCard(){
 // Associate the Random User API
 
 
-// 1. Create a new XHR object
 const xhr = new XMLHttpRequest();
 
 // 2. Callback function to run
@@ -175,7 +174,7 @@ xhr.onreadystatechange = function(){
     if(xhr.status === 200){
       // Convert results into an object
       const results = JSON.parse(xhr.responseText);
-      // Loop through the results and create a card for each employee
+      // A loop created for each employee card result
       for (var i = 0; i < results.results.length; i++) {
         var index = i + 1;
         var userName = {
@@ -206,8 +205,7 @@ xhr.onreadystatechange = function(){
         createOverlay(index, userName, userEmail, userAddress, userImg, userBday, userPhone);
       }
 
-      // ==================
-      // EVENT LISTENERS
+      // Event Listners
      
 
       // Parent of event listner
@@ -216,7 +214,7 @@ xhr.onreadystatechange = function(){
         
         var cardID = $(this).attr('id');
         var employeeNumber = cardID.slice(5,7);
-        // console.log('Employee Number: ' + employeeNumber);
+      
 
          
               overlay.style.left = 0;
@@ -226,7 +224,6 @@ xhr.onreadystatechange = function(){
 
           $('.prev').on('click', getPreviousCard);
 
-          // OR - listen for a left arrow key press
           $(document).keydown(function(e) {
             if (e.which === 37) {
               getPreviousCard();
@@ -261,8 +258,7 @@ xhr.onreadystatechange = function(){
               overlay.style.left = '100%';
               $('.overlay .card').css('display', 'none');
               $('.overlay .card').removeClass('selected');
-              // cardToShow.style.display = 'none';
-              // cardToShow.classList.remove('selected');
+          
             }
           });
 
